@@ -61,6 +61,8 @@ if check_snack == "Yes":
     desired_snack = ""
     while desired_snack != "xxx":
 
+        snack_row = []
+
         desired_snack = input("Snack: ").lower()
 
         if desired_snack == "xxx":
@@ -84,8 +86,13 @@ if check_snack == "Yes":
 
         amount_snack = "{} {}".format(amount, snack_choice)
 
-        if snack_choice != "xxx" and snack_choice != "invalid hoice":
-            snack_order.append(snack_choice)
+        # add snack AND amount to list...
+
+        snack_row.append(amount)
+        snack_row.append(snack_choice)
+
+        if snack_choice != "xxx" and snack_choice != "invalid choice":
+            snack_order.append(snack_row)
 
 print()
 if len(snack_order) == 0:
@@ -96,4 +103,6 @@ else:
 
     for item in snack_order:
         print(item)
+
+    print(snack_order)
 
