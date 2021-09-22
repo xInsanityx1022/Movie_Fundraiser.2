@@ -19,11 +19,12 @@ def string_check(choice, options):
         else:
             is_valid = "no"
 
-    # if the snack is not OK - ask question again
-    if is_valid == "yes":
-        return chosen
-    else:
+    if is_valid != "yes":
         return "Invalid choice"
+    # if the snack is not OK - ask question again
+    else:
+        return chosen
+
 
 # valid snacks holds list of all snacks
 # Each item in valid snacks is a list with
@@ -81,4 +82,3 @@ else:
 
     for item in snack_order:
         print(item)
-
